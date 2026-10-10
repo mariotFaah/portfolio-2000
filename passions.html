@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>~*~ MES PASSIONS ~*~</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+<div class="banner">~*~ MES PASSIONS ~*~<small>Album photo, sondage et horoscope</small></div>
+<marquee scrollamount="5">*** Nouvelles photos ajoutees *** Vote pour la meilleure console *** Reviens souvent ***</marquee>
+<table class="l"><tr>
+<td class="nav">
+<h3>MENU</h3>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="index.html#projets">Mes projets</a></li>
+<li><a href="jeux.html">Mes jeux</a></li>
+<li><a href="films.html">Video-club</a></li>
+<li><a href="musique.html">Musique</a></li>
+<li><a href="passions.html">Mes passions</a></li>
+<li><a href="bureau.html">Mon bureau</a></li>
+<li><a href="index.html#livre">Livre d'or</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<h3>HEURE</h3>
+<div class="counter" id="clock" style="font-size:14px;letter-spacing:1px">--:--:--</div>
+<hr class="rainbow">
+<h3>WEBRING</h3>
+<div style="font-size:12px">Le ring des devs malgaches<br><a href="index.html#liens">&lt;&lt; prec</a> | <a href="index.html#liens">suiv &gt;&gt;</a></div>
+<hr class="rainbow">
+<a class="btn" href="#">Made with Notepad</a>
+<a class="btn" href="#">IE 5 Ready</a>
+<a class="btn" href="#">Web 1.0 Forever</a>
+</td>
+<td class="main">
+<h2>Mes passions</h2>
+<p>Mon <b>album photo</b> numerique ! (scannees avec le scanner de l'oncle, c'est pour ca que c'est flou)</p>
+<!-- Pour mettre tes vraies photos : remplace une div class="ph" par <img src="images/ta-photo.jpg" width="114" height="100"> -->
+<div class="cards"><div class="pol" style="--r:-3deg"><div class="ph" style="background:#99ccff">&#128187;</div>Le code</div><div class="pol" style="--r:2deg"><div class="ph" style="background:#ffcc99">&#127928;</div>La musique</div><div class="pol" style="--r:-1deg"><div class="ph" style="background:#ccff99">&#127918;</div>Les jeux</div><div class="pol" style="--r:3deg"><div class="ph" style="background:#ff99cc">&#127916;</div>Le cinema</div><div class="pol" style="--r:-2deg"><div class="ph" style="background:#ffff99">&#128248;</div>Mes photos</div><div class="pol" style="--r:1deg"><div class="ph" style="background:#cc99ff">&#128424;</div>Bricolage</div></div>
+<hr class="rainbow">
+<h2>Sondage de la semaine</h2>
+<div class="box">
+<b>Quelle est la meilleure console ?</b><br>
+<label><input type="radio" name="v" value="0" checked> PlayStation</label><br>
+<label><input type="radio" name="v" value="1"> Nintendo 64</label><br>
+<label><input type="radio" name="v" value="2"> Dreamcast</label><br>
+<label><input type="radio" name="v" value="3"> Game Boy Color</label><br>
+<button id="vote">Voter !</button> <span class="note">(1 vote par visiteur, enfin si tu veux)</span>
+<div id="res"></div>
+</div>
+<div class="box"><b>Horoscope du jour :</b> aujourd'hui les astres t'annoncent un bug en production le vendredi soir. Sauvegarde ton travail.</div>
+</td>
+</tr></table>
+<div class="foot">Cette page a ete vue 640x480 minimum - Tous droits reserves &copy; 2000<br>Derniere mise a jour : 10 octobre 2026 (ou 2000, je sais plus)</div>
+</div>
+<script src="script.js"></script>
+<script>
+var N=['PlayStation','Nintendo 64','Dreamcast','Game Boy Color'],V=[12,8,5,3];
+function draw(){var t=V.reduce(function(a,b){return a+b},0),h='';V.forEach(function(v,i){var p=Math.round(v*100/t);h+=N[i]+' <span class="bar" style="width:'+(p*1.6)+'px"></span> '+p+'% ('+v+')<br>'});document.getElementById('res').innerHTML=h}
+document.getElementById('vote').onclick=function(){var r=document.querySelector('input[name=v]:checked');V[+r.value]++;draw();this.disabled=true;this.textContent='Merci !'};
+draw();</script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:#000066;background-image:radial-gradient(#3333aa 1px,transparent 1px);background-size:6px 6px;color:#ffff99;font-family:"Comic Sans MS","Comic Sans","Chalkboard SE",cursive;font-size:15px}
+a{color:#00ffff}a:visited{color:#ff66ff}a:hover{color:#ffff00;background:#ff0000}
+#wrap{max-width:780px;margin:0 auto;padding:8px}
+.banner{background:linear-gradient(#ff0000,#990000);border:4px ridge #ffcc00;text-align:center;padding:8px;color:#fff;font-family:Impact,"Arial Black",sans-serif;font-size:34px;letter-spacing:2px;text-shadow:3px 3px #000}
+.banner small{display:block;font:italic 14px "Times New Roman",serif;text-shadow:none;color:#ffff99}
+marquee{background:#000;color:#00ff00;font-family:"Courier New",monospace;border:2px inset #888;padding:3px;margin:6px 0}
+.blink{animation:b 1s steps(1) infinite}@keyframes b{50%{visibility:hidden}}
+.rainbow{height:6px;border:0;margin:10px 0;background:linear-gradient(90deg,red,orange,yellow,lime,cyan,blue,magenta,red)}
+table.l{width:100%;border-collapse:separate;border-spacing:6px}
+td.nav{width:170px;vertical-align:top;background:#000099;border:3px outset #6666ff;padding:8px}
+td.main{vertical-align:top;background:#000033;border:3px inset #6666ff;padding:12px}
+td.nav h3{margin:0 0 6px;color:#ff9900;text-decoration:underline;font-size:15px}
+td.nav ul{list-style:square;margin:0 0 10px;padding-left:18px}
+h2{color:#ff66cc;font-family:Impact,sans-serif;font-weight:normal;font-size:24px;margin:0 0 6px;text-shadow:2px 2px #660033}
+.box{border:2px dashed #ffcc00;padding:8px;margin:10px 0;background:#000066}
+.counter{display:inline-block;background:#000;color:#ff0000;font:bold 20px "Courier New",monospace;letter-spacing:4px;padding:2px 8px;border:3px inset #999}
+.btn{display:inline-block;font:11px Verdana,sans-serif;border:2px outset #ccc;background:#c0c0c0;color:#000;padding:2px 6px;margin:2px;text-decoration:none}
+.uc{background:repeating-linear-gradient(45deg,#ffcc00 0 12px,#000 12px 24px);color:#000;text-align:center;padding:4px;margin:8px 0}
+.uc b{background:#ffcc00;padding:2px 10px;font-family:Impact,sans-serif;font-size:18px}
+input,textarea,button{font-family:"Comic Sans MS",cursive;font-size:13px}
+button{border:2px outset #ccc;background:#c0c0c0;padding:2px 10px;cursor:pointer}
+button:active{border-style:inset}
+.entry{border-bottom:1px dotted #6666ff;padding:4px 0;color:#fff}
+.foot{text-align:center;font:11px Verdana,sans-serif;color:#9999ff;margin:12px 0}
+.note{font-size:12px;color:#9999ff}
+.stars{color:#ffcc00;letter-spacing:1px}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t th{background:#990000;color:#fff;border:1px solid #ffcc00;padding:3px}
+table.t td{border:1px solid #6666ff;padding:3px}
+table.t tr:nth-child(even) td{background:#000066}
+.cards{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:10px 0}
+.card{width:150px;background:linear-gradient(135deg,#ffe066,#ffb300);border:5px solid #d4a000;border-radius:8px;padding:4px;color:#000;font:11px Verdana,sans-serif;cursor:pointer;position:relative;overflow:hidden}
+.card .ch{display:flex;justify-content:space-between;font-weight:bold;font-size:12px}
+.card .art{border:2px solid #7a5c00;margin:3px 0}
+.card .art svg{display:block;width:100%;height:auto}
+.card .info{font-style:italic;font-size:9px;text-align:center;margin-bottom:3px}
+.card .atk{display:flex;justify-content:space-between;border-top:1px solid #7a5c00;padding:2px 0}
+.card .rare{text-align:right;color:#7a5c00}
+.card.holo::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 20%,rgba(255,255,255,.75) 45%,rgba(255,0,200,.3) 55%,transparent 80%);animation:sh 1.1s}
+@keyframes sh{from{transform:translateX(-100%)}to{transform:translateX(100%)}}
+.vhs{width:200px;background:#111;border:2px solid #555;border-radius:3px;padding:6px;color:#fff;font:11px Verdana,sans-serif;cursor:pointer}
+.vhs .lab{background:#f5f5dc;color:#000;padding:4px;text-align:center;border:1px solid #999}
+.vhs .lab b{font:bold 15px Impact,sans-serif;display:block}
+.vhs .reels{display:flex;justify-content:space-around;margin-top:6px}
+.vhs .reels i{width:28px;height:28px;border-radius:50%;background:#eee;border:6px solid #333;box-sizing:border-box}
+.cd{width:110px;height:110px;border:4px ridge #ddd;display:flex;align-items:flex-end;justify-content:center;color:#fff;font:bold 10px Verdana,sans-serif;text-align:center;background:radial-gradient(circle,#000 0 7%,#ccc 8% 12%,transparent 13%),conic-gradient(red,orange,yellow,lime,cyan,blue,magenta,red)}
+.cd span{background:#000a;width:100%;padding:2px}
+.pol{width:130px;background:#fff;padding:8px 8px 12px;box-shadow:3px 3px 6px #000;color:#000;text-align:center;font:15px "Comic Sans MS",cursive;transform:rotate(var(--r,0deg))}
+.pol .ph{height:100px;display:flex;align-items:center;justify-content:center;font-size:52px}
+.winamp{width:100%;max-width:340px;background:#232323;border:3px outset #888;padding:6px;font-family:"Courier New",monospace;color:#00ff66;margin:8px 0}
+.winamp .led{background:#000;padding:4px;white-space:nowrap;overflow:hidden}
+.winamp .eq{display:flex;align-items:flex-end;gap:2px;height:40px;background:#000;margin:4px 0;padding:2px}
+.winamp .eq i{flex:1;background:linear-gradient(#f00,#ff0,#0f0);height:4px}
+.winamp .ctl{display:flex;gap:3px;margin:4px 0}
+.winamp ol{margin:4px 0 0;padding-left:22px;background:#000;font-size:12px}
+.winamp li{cursor:pointer}.winamp li.on{color:#fff;background:#003}
+.bar{background:#ff0000;height:12px;display:inline-block;vertical-align:middle;border:1px solid #fff}
+@media (max-width:600px){td.nav,td.main{display:block;width:auto}.banner{font-size:24px}}
+@media (prefers-reduced-motion:reduce){.blink,.card.holo::after{animation:none}}
+/* bureau Windows 98 */
+body.desk{background:#008080;background-image:none;font:12px Tahoma,Verdana,sans-serif;color:#000;overflow:hidden;height:100%}
+html:has(body.desk){height:100%}
+.win{position:absolute;background:#c0c0c0;border:2px outset #fff;box-shadow:2px 2px 0 #000;width:270px;max-width:94%}
+.tb{background:linear-gradient(90deg,#000080,#1084d0);color:#fff;font-weight:bold;padding:3px 4px;display:flex;justify-content:space-between;cursor:move;touch-action:none;user-select:none}
+.tb button{width:18px;height:16px;padding:0;font:bold 10px sans-serif;line-height:1}
+.wb{padding:8px}
+.wb .pad{background:#fff;border:2px inset #888;padding:6px;min-height:60px;font-family:"Courier New",monospace}
+.icon{position:absolute;width:84px;text-align:center;color:#fff;cursor:pointer;font-size:12px}
+.icon span{font-size:34px;display:block}
+.task{position:fixed;left:0;right:0;bottom:0;background:#c0c0c0;border-top:2px outset #fff;display:flex;align-items:center;gap:6px;padding:3px 4px calc(3px + env(safe-area-inset-bottom,0px))}
+.task button{font:bold 13px Tahoma,sans-serif}
+.task .tray{margin-left:auto;border:2px inset #888;padding:2px 8px}
+#menu{display:none;position:fixed;left:0;bottom:calc(36px + env(safe-area-inset-bottom,0px));background:#c0c0c0;border:2px outset #fff;width:190px;padding:4px}
+#menu a,#menu div{display:block;color:#000;text-decoration:none;padding:5px 8px;cursor:pointer}
+#menu a:hover,#menu div:hover{background:#000080;color:#fff}

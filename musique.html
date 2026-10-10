@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>~*~ MUSIQUE ~*~</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+<div class="banner">~*~ MUSIQUE ~*~<small>Lecteur MP3, hit-parade et CD graves</small></div>
+<marquee scrollamount="5">*** Nouveau : MP3 en 128 kbps *** Pas de telechargement pendant que maman telephone *** Vote pour ton titre prefere ***</marquee>
+<table class="l"><tr>
+<td class="nav">
+<h3>MENU</h3>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="index.html#projets">Mes projets</a></li>
+<li><a href="jeux.html">Mes jeux</a></li>
+<li><a href="films.html">Video-club</a></li>
+<li><a href="musique.html">Musique</a></li>
+<li><a href="passions.html">Mes passions</a></li>
+<li><a href="bureau.html">Mon bureau</a></li>
+<li><a href="index.html#livre">Livre d'or</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<h3>HEURE</h3>
+<div class="counter" id="clock" style="font-size:14px;letter-spacing:1px">--:--:--</div>
+<hr class="rainbow">
+<h3>WEBRING</h3>
+<div style="font-size:12px">Le ring des devs malgaches<br><a href="index.html#liens">&lt;&lt; prec</a> | <a href="index.html#liens">suiv &gt;&gt;</a></div>
+<hr class="rainbow">
+<a class="btn" href="#">Made with Notepad</a>
+<a class="btn" href="#">IE 5 Ready</a>
+<a class="btn" href="#">Web 1.0 Forever</a>
+</td>
+<td class="main">
+<h2>Ma musique</h2>
+<p>Mon lecteur MP3 prefere (version <b>1.0</b>, sans son, la connexion est trop lente pour le telechargement).</p>
+<div class="winamp">
+<div class="led" id="led">&#9632; Arrete - clique sur PLAY</div>
+<div class="eq" id="eq"></div>
+<div class="ctl"><button id="prev">|&lt;</button><button id="play">&#9654;</button><button id="pause">||</button><button id="next">&gt;|</button><span id="time" style="margin-left:auto">00:00</span></div>
+<ol id="pl"><li data-t="Californication - Red Hot Chili Peppers">Californication - Red Hot Chili Peppers (4:49)</li><li data-t="Beautiful Day - U2">Beautiful Day - U2 (4:08)</li><li data-t="Oops!... I Did It Again - Britney Spears">Oops!... I Did It Again - Britney Spears (3:31)</li><li data-t="Bye Bye Bye - *NSYNC">Bye Bye Bye - *NSYNC (3:20)</li><li data-t="Who Let the Dogs Out - Baha Men">Who Let the Dogs Out - Baha Men (3:18)</li></ol>
+</div>
+<hr class="rainbow">
+<h2>Mon hit-parade</h2>
+<table class="t"><tr><th>#</th><th>Titre</th><th>Artiste</th><th>Evol.</th></tr><tr><td>1</td><td>Californication</td><td>Red Hot Chili Peppers</td><td>&uarr;</td></tr><tr><td>2</td><td>Beautiful Day</td><td>U2</td><td>=</td></tr><tr><td>3</td><td>Oops!... I Did It Again</td><td>Britney Spears</td><td>&darr;</td></tr><tr><td>4</td><td>Bye Bye Bye</td><td>*NSYNC</td><td>&uarr;</td></tr><tr><td>5</td><td>Who Let the Dogs Out</td><td>Baha Men</td><td>NEW</td></tr></table>
+<hr class="rainbow">
+<h2>Mes CD graves</h2>
+<div class="cards"><div class="cd"><span>MIX CD n1 (grave)</span></div><div class="cd"><span>Hits de l'ete</span></div><div class="cd"><span>Slows 2000</span></div><div class="cd"><span>Copie de Copie</span></div></div>
+<p class="note">Le piratage c'est mal. Ces CD sont des compilations de mes propres idees.</p>
+</td>
+</tr></table>
+<div class="foot">Cette page a ete vue 640x480 minimum - Tous droits reserves &copy; 2000<br>Derniere mise a jour : 10 octobre 2026 (ou 2000, je sais plus)</div>
+</div>
+<script src="script.js"></script>
+<script>
+var songs=document.querySelectorAll('#pl li'),cur=0,playing=false,sec=0,eq=document.getElementById('eq'),led=document.getElementById('led'),bars=[];
+for(var i=0;i<18;i++){var b=document.createElement('i');eq.appendChild(b);bars.push(b)}
+function show(){songs.forEach(function(s,i){s.className=i===cur?'on':''});led.textContent=playing?('\u25BA '+(cur+1)+'. '+songs[cur].dataset.t+' *** '):'\u25A0 Pause - '+songs[cur].dataset.t}
+function go(i){cur=(i+songs.length)%songs.length;sec=0;playing=true;show()}
+document.getElementById('play').onclick=function(){playing=true;show()};
+document.getElementById('pause').onclick=function(){playing=false;show()};
+document.getElementById('next').onclick=function(){go(cur+1)};
+document.getElementById('prev').onclick=function(){go(cur-1)};
+songs.forEach(function(s,i){s.onclick=function(){go(i)}});
+setInterval(function(){bars.forEach(function(b){b.style.height=(playing?4+Math.random()*34:2)+'px'});if(playing){sec+=0.3;document.getElementById('time').textContent=('0'+Math.floor(sec/60)).slice(-2)+':'+('0'+Math.floor(sec%60)).slice(-2)}},300);
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>~*~ VIDEO-CLUB ~*~</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="wrap">
+<div class="banner">~*~ VIDEO-CLUB ~*~<small>Cassettes VHS, affiches et soiree cinema</small></div>
+<marquee scrollamount="5">*** Ouvert 7j/7 *** Carte de fidelite : 10 locations = 1 gratuite *** Tracking automatique ***</marquee>
+<table class="l"><tr>
+<td class="nav">
+<h3>MENU</h3>
+<ul>
+<li><a href="index.html">Accueil</a></li>
+<li><a href="index.html#projets">Mes projets</a></li>
+<li><a href="jeux.html">Mes jeux</a></li>
+<li><a href="films.html">Video-club</a></li>
+<li><a href="musique.html">Musique</a></li>
+<li><a href="passions.html">Mes passions</a></li>
+<li><a href="bureau.html">Mon bureau</a></li>
+<li><a href="index.html#livre">Livre d'or</a></li>
+<li><a href="index.html#contact">Contact</a></li>
+</ul>
+<h3>HEURE</h3>
+<div class="counter" id="clock" style="font-size:14px;letter-spacing:1px">--:--:--</div>
+<hr class="rainbow">
+<h3>WEBRING</h3>
+<div style="font-size:12px">Le ring des devs malgaches<br><a href="index.html#liens">&lt;&lt; prec</a> | <a href="index.html#liens">suiv &gt;&gt;</a></div>
+<hr class="rainbow">
+<a class="btn" href="#">Made with Notepad</a>
+<a class="btn" href="#">IE 5 Ready</a>
+<a class="btn" href="#">Web 1.0 Forever</a>
+</td>
+<td class="main">
+<h2>Mon video-club</h2>
+<p>Ma collection de <b>cassettes VHS</b> (certaines sont enregistrees a la tele, avec les pubs). Clique sur une cassette pour lire le synopsis.</p>
+<div class="box" id="syn">Insere une cassette dans le magnetoscope...</div>
+<div class="cards"><div class="vhs" data-s="Un informaticien decouvre que son monde n'est qu'une simulation."><div class="lab"><b>MATRIX</b>1999 - Science-fiction<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="reels"><i></i><i></i></div></div><div class="vhs" data-s="Un general trahi devient gladiateur pour se venger."><div class="lab"><b>GLADIATOR</b>2000 - Peplum<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="reels"><i></i><i></i></div></div><div class="vhs" data-s="Un ogre grincheux sauve une princesse pour retrouver son marais."><div class="lab"><b>SHREK</b>2001 - Animation<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="reels"><i></i><i></i></div></div><div class="vhs" data-s="Woody est enleve par un collectionneur, ses amis partent le chercher."><div class="lab"><b>TOY STORY 2</b>1999 - Animation<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="reels"><i></i><i></i></div></div><div class="vhs" data-s="Un petit hobbit doit detruire un anneau maudit."><div class="lab"><b>LE SEIGNEUR DES ANNEAUX</b>2001 - Fantasy<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div><div class="reels"><i></i><i></i></div></div><div class="vhs" data-s="Une serveuse de Montmartre arrange discretement la vie des autres."><div class="lab"><b>AMELIE POULAIN</b>2001 - Comedie<br><span class="stars">&#9733;&#9733;&#9733;&#9733;&#9734;</span></div><div class="reels"><i></i><i></i></div></div></div>
+<div class="uc"><b>PENSEZ A REMBOBINER !</b></div>
+<hr class="rainbow">
+<h2>Au programme ce soir</h2>
+<table class="t"><tr><th>Heure</th><th>Chaine</th><th>Programme</th></tr>
+<tr><td>20h45</td><td>Le grand film</td><td>Film d'action (VF)</td></tr>
+<tr><td>22h30</td><td>Cine-club</td><td>Comedie culte</td></tr>
+<tr><td>00h15</td><td>Nuit blanche</td><td>Dessins animes en boucle</td></tr></table>
+<p class="note">Synopsis ecrits par moi, avec mes mots. Les titres appartiennent a leurs studios.</p>
+</td>
+</tr></table>
+<div class="foot">Cette page a ete vue 640x480 minimum - Tous droits reserves &copy; 2000<br>Derniere mise a jour : 10 octobre 2026 (ou 2000, je sais plus)</div>
+</div>
+<script src="script.js"></script>
+<script>document.querySelectorAll('.vhs').forEach(function(v){v.addEventListener('click',function(){document.getElementById('syn').innerHTML='<b>&#9654; LECTURE :</b> '+v.querySelector('b').textContent+'<br>'+v.dataset.s})});</script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Mon bureau - Windows 98</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="desk">
+<div class="icon" style="left:10px;top:10px" data-open="w-pc"><span>&#128187;</span>Poste de travail</div>
+<div class="icon" style="left:10px;top:100px" data-open="w-note"><span>&#128221;</span>Lisez-moi.txt</div>
+<div class="icon" style="left:10px;top:190px" data-open="w-bin"><span>&#128465;</span>Corbeille</div>
+<div class="icon" style="left:10px;top:280px"><a href="index.html" style="color:#fff;background:none"><span>&#127760;</span>Internet Explorer</a></div>
+
+<div class="win" id="w-note" style="left:120px;top:20px">
+<div class="tb"><span>Lisez-moi.txt - Bloc-notes</span><button data-close>X</button></div>
+<div class="wb"><div class="pad">Bienvenue sur mon bureau !<br><br>Double-clique... enfin, clique sur les icones.<br>Tu peux deplacer les fenetres en tirant la barre bleue.<br><br>Bon surf !<br>- Mariot, 2000</div></div></div>
+
+<div class="win" id="w-pc" style="left:140px;top:150px;display:none">
+<div class="tb"><span>Poste de travail</span><button data-close>X</button></div>
+<div class="wb"><div class="pad">&#128190; Disquette 3,5 (A:)<br>&#128190; Disque local (C:) - 4,3 Go<br>&#128191; CD-ROM (D:)<br>&#128193; Panneau de configuration<br>&#128424; Imprimantes</div>
+<p>Memoire : 64 Mo de RAM<br>Processeur : Pentium II 350 MHz</p></div></div>
+
+<div class="win" id="w-bin" style="left:90px;top:230px;display:none">
+<div class="tb"><span>Corbeille</span><button data-close>X</button></div>
+<div class="wb"><div class="pad">devoir_final_VRAIMENT_final2.doc<br>mon_premier_site.html<br>virus_ILOVEYOU.txt (n'ouvre pas !)</div></div></div>
+
+<div class="win" id="w-err" style="left:60px;top:120px;display:none">
+<div class="tb"><span>Erreur</span><button data-close>X</button></div>
+<div class="wb"><p>&#10060; Cette page a effectue une operation illegale et va etre fermee. Si le probleme persiste, contactez le fabricant.</p><button data-close style="width:80px">OK</button></div></div>
+
+<div id="menu">
+<a href="index.html">Accueil</a><a href="jeux.html">Mes jeux</a><a href="films.html">Video-club</a><a href="musique.html">Musique</a><a href="passions.html">Mes passions</a>
+<div data-open="w-err">Arreter...</div>
+</div>
+<div class="task"><button id="start">&#9654; Demarrer</button><span class="note" style="color:#000">Mon bureau</span><span class="tray" id="clock">--:--</span></div>
+<script>
+var z=10;
+function front(w){w.style.zIndex=++z}
+document.querySelectorAll('.win').forEach(function(w){
+ w.addEventListener('pointerdown',function(){front(w)});
+ var tb=w.querySelector('.tb'),sx,sy,ox,oy,d=false;
+ tb.addEventListener('pointerdown',function(e){if(e.target.tagName==='BUTTON')return;d=true;sx=e.clientX;sy=e.clientY;ox=w.offsetLeft;oy=w.offsetTop;tb.setPointerCapture(e.pointerId)});
+ tb.addEventListener('pointermove',function(e){if(!d)return;w.style.left=(ox+e.clientX-sx)+'px';w.style.top=Math.max(0,oy+e.clientY-sy)+'px'});
+ tb.addEventListener('pointerup',function(){d=false});
+ w.querySelectorAll('[data-close]').forEach(function(b){b.addEventListener('click',function(){w.style.display='none'})});
+});
+document.querySelectorAll('[data-open]').forEach(function(el){el.addEventListener('click',function(){var w=document.getElementById(el.dataset.open);w.style.display='block';front(w);document.getElementById('menu').style.display='none'})});
+document.getElementById('start').onclick=function(){var m=document.getElementById('menu');m.style.display=m.style.display==='block'?'none':'block'};
+function tick(){var d=new Date();document.getElementById('clock').textContent=('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2)}
+tick();setInterval(tick,10000);
+setTimeout(function(){var w=document.getElementById('w-err');w.style.display='block';front(w)},5000);
+</script>
+</body>
+</html>
